@@ -5,16 +5,16 @@ import userRoutes from "./src/routes/users.routes.js"
 import cookieParser from "cookie-parser"
 import cors from "cors"
 
-
+dotenv.config()
+const app = express()
 const corsOptions = {
   origin: ['http://localhost:5173' , 'https://authentication-ui-flame.vercel.app'], // Allow your frontend during development
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Allowed HTTP methods
   allowedHeaders: ['Content-Type', 'Authorization'], // Allowed headers
   credentials: true, // Include credentials if needed
 };
-dotenv.config()
-const app = express()
-const port = 3000
+
+
 
 app.use(cors(corsOptions));
 app.use(cookieParser())
